@@ -1,0 +1,4 @@
+sudo ovs-dpctl  dump-flows
+sudo ovs-appctl ofproto/trace gtp_br0 in_port=gtp0
+sudo ovs-ofctl monitor gtp_br0 128 watch:table=3
+sudo ovs-ofctl snoop gtp_br0
