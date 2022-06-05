@@ -1,4 +1,24 @@
+Good Reference : 
+https://gist.github.com/djoreilly/c5ea44663c133b246dd9d42b921f7646
+
 sudo ovs-dpctl  dump-flows
+
+Trace the table flow
+-----------------------------------------------------------
 sudo ovs-appctl ofproto/trace gtp_br0 in_port=gtp0
+
+Monitor specific table espcially for IN/OUT
+----------------------------------------------------------
 sudo ovs-ofctl monitor gtp_br0 128 watch:table=3
+
+Snoop on Bridge
+------------------------------------------------------------
 sudo ovs-ofctl snoop gtp_br0
+
+Dump the hidden flows
+--------------------------------------------------------------
+ovs-appctl bridge/dump-flows uplink_br0
+
+Dump Current Packet Flow
+--------------------------------------------------------------
+sudo ovs-dpctl dump-flows
